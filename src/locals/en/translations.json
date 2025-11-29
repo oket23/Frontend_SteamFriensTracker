@@ -129,7 +129,61 @@
     "tip": "Tip: if you came here from a bookmark or an old link, try opening the home page and navigating from there.",
     "errorCodeLabel": "Error code:",
     "errorCodeValue": "NOT_FOUND"
-  }
+  },
+  "friendDetails": {
+    "missingIdTitle": "Friend not found",
+    "missingIdDesc": "Friend id is missing in the URL.",
 
+    "loadErrorTitle": "Failed to load friend",
+    "loadErrorDesc": "Please try again a bit later.",
+
+    "notLoadedTitle": "Friend not found",
+    "notLoadedDesc": "No data returned from API for this friend.",
+
+    "stats": {
+      "steamCreated": "Steam account created",
+      "lastSeen": "Last seen",
+      "status": "Status"
+    },
+
+    "summary": {
+      "title": "Summary"
+    }
+  },
+  "friendsPage": {
+    "title": "Friends Tracker",
+    "subtitle": "See what your friends are playing right now.",
+
+    "error": "Failed to load friends list.",
+
+    "notFoundTitle": "No friends found",
+    "notFoundDesc": "Try adjusting your filters",
+    "resetAll": "Reset all filters at the top",
+
+    "searchByName": "Search by name...",
+    "filterByGame": "Filter by game...",
+    "onlyOnline": "Online only",
+    "onlyInGame": "In game",
+    "clearFilters": "Clear filters",
+
+    "details": "Details",
+    "openInSteam": "Open in Steam",
+
+    "buttons": {
+      "viewProfile": "Steam profile"
+    },
+
+    "labels": {
+      "steamId": "SteamID:",
+      "status": "Status",
+      "playing": "Playing",
+      "notInGame": "Not in game",
+      "offline": "Offline",
+      "lastSeen": "Last seen",
+      "inGameCaps": "IN GAME",
+      "onlineCaps": "ONLINE",
+      "offlineCaps": "OFFLINE"
+    }
+  }
 
 }

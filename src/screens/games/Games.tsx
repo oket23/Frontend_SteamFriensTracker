@@ -1,22 +1,23 @@
-import { useState, type FormEvent } from "react";
-import { Link } from "react-router";
-import { useTranslation } from "react-i18next";
-import { useGamesQuery } from "@/screens/games/hooks/useGamesQuery";
-import formatPrice, { type PriceInfo } from "@/helpers/formatPrice";
+import {type FormEvent} from "react";
+import {Link} from "react-router";
+import {useTranslation} from "react-i18next";
+import {useGamesQuery} from "@/screens/games/hooks/useGamesQuery";
+import formatPrice, {type PriceInfo} from "@/screens/games/helpers/formatPrice.tsx";
+import {useGamesStore} from "@/store/useGamesStore";
 import mapI18nToSteamLang from "@/helpers/mapI18nToSteamLang";
-import mapI18nToRegion from "@/helpers/mapI18nToRegion";
 import GamesNotFound from "@/screens/games/components/games-not-found/GamesNotFound.tsx";
-import type { ISteamStoreSearchItem } from "@/types/ISteamSearch.ts";
-import useDebounce from "@/hooks/useDebounce/useDebounce.tsx"; // Перевір, що шлях правильний
+import type {ISteamStoreSearchItem} from "@/types/ISteamSearch.ts";
+import useDebounce from "@/hooks/useDebounce/useDebounce.tsx";
+import mapI18nToRegion from "@/screens/games/helpers/mapI18nToRegion.tsx";
 
 const Games = () => {
-    const { t, i18n } = useTranslation();
-    const [searchInput, setSearchInput] = useState("");
+    const {t, i18n} = useTranslation();
+    const {searchTerm: searchInput, setSearchTerm: setSearchInput} = useGamesStore();
     const debouncedSearchTerm = useDebounce(searchInput, 500);
     const steamLang = mapI18nToSteamLang(i18n.language);
     const steamRegion = mapI18nToRegion(i18n.language);
 
-    const { data, isLoading, isError } = useGamesQuery({
+    const {data, isLoading, isError} = useGamesQuery({
         name: debouncedSearchTerm,
         lang: steamLang,
         region: steamRegion,
@@ -64,7 +65,8 @@ const Games = () => {
 
                             {isLoading && (
                                 <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                                    <div className="h-4 w-4 animate-spin rounded-full border-2 border-sky-500 border-t-transparent" />
+                                    <div
+                                        className="h-4 w-4 animate-spin rounded-full border-2 border-sky-500 border-t-transparent"/>
                                 </div>
                             )}
                         </div>
@@ -103,7 +105,7 @@ const Games = () => {
                     )}
                     {isLoading && hasSearch && (
                         <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                            {Array.from({ length: 6 }).map((_, idx) => (
+                            {Array.from({length: 6}).map((_, idx) => (
                                 <div
                                     key={idx}
                                     className="
@@ -114,12 +116,12 @@ const Games = () => {
                                         shadow-[0_18px_40px_rgba(15,23,42,0.8)]
                                     "
                                 >
-                                    <div className="h-28 w-full bg-slate-900" />
+                                    <div className="h-28 w-full bg-slate-900"/>
                                     <div className="flex-1 px-4 py-3 space-y-3">
-                                        <div className="h-3 w-3/4 rounded-full bg-slate-800" />
-                                        <div className="h-3 w-1/2 rounded-full bg-slate-800" />
+                                        <div className="h-3 w-3/4 rounded-full bg-slate-800"/>
+                                        <div className="h-3 w-1/2 rounded-full bg-slate-800"/>
                                         <div className="mt-2 flex justify-end">
-                                            <div className="h-7 w-20 rounded-full bg-slate-800" />
+                                            <div className="h-7 w-20 rounded-full bg-slate-800"/>
                                         </div>
                                     </div>
                                 </div>
@@ -128,7 +130,8 @@ const Games = () => {
                     )}
 
                     {!isLoading && isError && hasSearch && (
-                        <div className="mt-4 rounded-3xl border border-rose-800/60 bg-rose-950/40 px-4 py-3 text-center text-xs text-rose-100">
+                        <div
+                            className="mt-4 rounded-3xl border border-rose-800/60 bg-rose-950/40 px-4 py-3 text-center text-xs text-rose-100">
                             {t("gamesPage.error")}
                         </div>
                     )}
@@ -170,8 +173,10 @@ const Games = () => {
                                                 {game.name}
                                             </h2>
 
-                                            <div className="mt-3 flex flex-col gap-2 text-xs sm:flex-row sm:items-center sm:justify-between">
-                                                <span className="inline-flex items-center rounded-full bg-slate-900/80 px-3 py-1 text-[11px] font-medium text-slate-200">
+                                            <div
+                                                className="mt-3 flex flex-col gap-2 text-xs sm:flex-row sm:items-center sm:justify-between">
+                                                <span
+                                                    className="inline-flex items-center rounded-full bg-slate-900/80 px-3 py-1 text-[11px] font-medium text-slate-200">
                                                     {t("gamesPage.appId")}
                                                     <span className="ml-1 font-semibold text-sky-300">
                                                         {game.id}
@@ -193,7 +198,8 @@ const Games = () => {
 
                                                     {priceInfo.kind === "discount" && (
                                                         <div className="flex items-center gap-2">
-                                                            <span className="text-[11px] font-medium text-rose-400 bg-rose-900/40 px-2 py-0.5 rounded-full">
+                                                            <span
+                                                                className="text-[11px] font-medium text-rose-400 bg-rose-900/40 px-2 py-0.5 rounded-full">
                                                                 -{priceInfo.discountPercent}%
                                                             </span>
                                                             <span className="text-[11px] text-slate-400 line-through">

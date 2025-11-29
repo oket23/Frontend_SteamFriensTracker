@@ -129,8 +129,62 @@
     "tip": "Порада: якщо ви прийшли із закладки або старого посилання — спробуйте відкрити головну сторінку та перейти далі через навігацію.",
     "errorCodeLabel": "Код помилки:",
     "errorCodeValue": "NOT_FOUND"
-  }
+  },
+  "friendDetails": {
+    "missingIdTitle": "Друга не знайдено",
+    "missingIdDesc": "Ідентифікатор друга відсутній в URL.",
 
+    "loadErrorTitle": "Не вдалося завантажити дані друга",
+    "loadErrorDesc": "Спробуй, будь ласка, трохи пізніше.",
+
+    "notLoadedTitle": "Друга не знайдено",
+    "notLoadedDesc": "API не повернуло дані для цього друга.",
+
+    "stats": {
+      "steamCreated": "Обліковий запис Steam створено",
+      "lastSeen": "Востаннє онлайн",
+      "status": "Статус"
+    },
+
+    "summary": {
+      "title": "Зведення"
+    }
+  },
+  "friendsPage": {
+    "title": "Трекер друзів",
+    "subtitle": "Дивись, у що зараз грають твої друзі.",
+
+    "error": "Не вдалося завантажити список друзів.",
+
+    "notFoundTitle": "Друзів не знайдено",
+    "notFoundDesc": "Спробуй змінити або скинути фільтри",
+    "resetAll": "Скинути всі фільтри нагорі",
+
+    "searchByName": "Пошук за ніком...",
+    "filterByGame": "Фільтр за грою...",
+    "onlyOnline": "Лише онлайн",
+    "onlyInGame": "Лише в грі",
+    "clearFilters": "Очистити фільтри",
+
+    "details": "Детальніше",
+    "openInSteam": "Відкрити в Steam",
+
+    "buttons": {
+      "viewProfile": "Профіль Steam"
+    },
+
+    "labels": {
+      "steamId": "SteamID:",
+      "status": "Статус",
+      "playing": "Грає",
+      "notInGame": "Не в грі",
+      "offline": "Офлайн",
+      "lastSeen": "Востаннє онлайн",
+      "inGameCaps": "В ГРІ",
+      "onlineCaps": "ОНЛАЙН",
+      "offlineCaps": "ОФЛАЙН"
+    }
+  }
 }
 
 

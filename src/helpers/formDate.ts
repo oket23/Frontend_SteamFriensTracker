@@ -1,4 +1,4 @@
-export const formatDate = (value?: string | null) => {
+const formatDate = (value?: string | null) => {
     if (!value) return "—";
     const d = new Date(value);
     if (Number.isNaN(d.getTime())) return "—";
@@ -10,3 +10,5 @@ export const formatDate = (value?: string | null) => {
         minute: "2-digit",
     }).format(d);
 };
+
+export default formatDate;

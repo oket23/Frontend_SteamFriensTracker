@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import mapI18nToSteamLang from "@/helpers/mapI18nToSteamLang";
 import { useGameQuery } from "@/screens/game-details/hooks/useGameQuery";
 import type { SteamGameDetails } from "@/types/IGameDetails";
-import renderPlatforms from "@/helpers/renderPlatforms";
+import renderPlatforms from "@/screens/game-details/helpers/renderPlatforms.ts";
 import GameDetailsNotFound from "@/screens/game-details/components/GameDetailsNotFound";
 import HeaderElement from "@/screens/game-details/components/HeaderElement.tsx";
 import GameScreenshots from "@/screens/game-details/components/GameScreenshots.tsx";

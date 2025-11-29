@@ -16,10 +16,19 @@ export interface IUser {
     profileUrl: string;
     createdAtUtc: string;
     isOnline: boolean;
-    personaState: string;
+    personaState: SteamPersonaState;
     currentGameId: string | null;
     currentGameName: string | null;
     lastSeenAtUtc: string | null;
     steamAccountCreatedAtUtc: string | null;
     countryCode: string | null;
 }
+
+export type SteamPersonaState =
+    | "Offline"
+    | "Online"
+    | "Busy"
+    | "Away"
+    | "Snooze"
+    | "LookingToTrade"
+    | "LookingToPlay";

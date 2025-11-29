@@ -1,5 +1,3 @@
-// types/IGameDetails.ts
-
 export interface SteamRequirements {
     minimum?: string | null;
     recommended?: string | null;

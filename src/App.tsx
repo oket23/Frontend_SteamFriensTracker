@@ -8,6 +8,8 @@ import Layout from "@components/layout/Layout.tsx";
 import Profile from "@/screens/profile/Profile.tsx";
 import GameDetails from "@/screens/game-details/GameDetails.tsx";
 import Games from "@/screens/games/Games.tsx";
+import Friends from "@/screens/friends/Friends.tsx";
+import FriendDetails from "@/screens/friend-details/FriendDetails.tsx";
 
 export default function App() {
 
@@ -17,6 +19,8 @@ export default function App() {
         {path: RouterEnum.PROFILE, element: <Profile/> },
         {path: RouterEnum.GAME_DETAILS, element: <GameDetails/>},
         {path: RouterEnum.GAMES, element: <Games/>},
+        {path: RouterEnum.FRIENDS, element: <Friends/>},
+        {path: RouterEnum.FRIENDS_DETAILS, element: <FriendDetails/>},
         {path: "*", element: <NotFound/>},
     ]
 
